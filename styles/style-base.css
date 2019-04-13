@@ -13,7 +13,7 @@ h1{
   font-family: 'Roboto', cursive;
   text-decoration: underline;
   font-weight: 900;
-  color: #DFFBE9;
+  color: green;
   font-size:250%;
 }
 h2{
@@ -24,8 +24,10 @@ h2{
 }
 .all_page{
   border: 1px solid green;
-  background-image:url("/images/home.jpg");
+  background-image:url("/images/happy.png");
+  background-position: 0px 0px bottom;
   background-size: cover;
+  background-color: #93F6E9;
   height:98vh;
 }
 
