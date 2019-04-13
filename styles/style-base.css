@@ -20,7 +20,8 @@ html {
   flex-direction:column;
   justify-content:space-around;
   align-items:center;
-  background:#adebeb;
+  background-image:url("/images/home.jpg");
+  background-size: cover;
 }
 
 a {

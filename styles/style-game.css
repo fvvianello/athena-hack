@@ -1,0 +1,16 @@
+html {
+  font-family: 'Roboto', sans-serif;
+
+}
+h1{
+  font-family: 'Amatic SC', cursive;
+}
+h2{
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  text-decoration: underline;
+}
+  .title-container{
+    display: flex;
+    justify-content:space-between;
+  }
