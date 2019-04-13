@@ -1,0 +1,8 @@
+document.getElementById('button').onclick = (function(){
+    var demo = document.getElementById('demo');
+    var text = [demo.textContent,'This is JavaScript!'];
+    var count = 0;
+    return function() {
+        demo.textContent = text[++count % 2];
+    }
+})();

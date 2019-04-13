@@ -1,3 +1,12 @@
+h1 {
+    color: #1F85DE;
+    font-family: 'Amatic SC', cursive;
+    font-size: 32;
+    text-align: center;
+}
+
+/* button.style.visibility = "hidden"; */
+
 body{
 
  /* for testing */
@@ -7,4 +16,8 @@ body{
   height:98vh;
   font-family: 'Roboto', sans-serif;
 
+}
+
+.wrapper {
+    text-align: center;
 }
