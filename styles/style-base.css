@@ -13,8 +13,21 @@ color scheme
   /* regular */
   height:98vh;
   font-family: 'Roboto', sans-serif;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
 
+.main-item{
+  width:50%;
+  border: 1px solid green;
+  text-align:center;
+}
+
+.middle-items{
+  display:flex;
+}
 h1 {
   font-family: 'Amatic SC', cursive;
 }
