@@ -5,3 +5,8 @@ html {
 h1 {
   font-family: 'Amatic SC', cursive;
 }
+
+.title-container{
+  display: flex;
+  justify-content:space-between;
+}
