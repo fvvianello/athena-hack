@@ -9,19 +9,45 @@ color scheme
 html {
   color:black;
 }
+h1{
+  font-family: 'Roboto', cursive;
+  text-decoration: underline;
+  font-weight: 900;
+  color: #BFF6BD;
+  font-size:250%;
+}
+h2{
+  font-family: 'Roboto', cursive;
+  font-weight: 900;
+  font-size:100%;
+  text-align: justify;
+  color: black;
+}
+.all_page{
+  border: 1px solid red;
+  background-image:url("/images/home.jpg");
+  background-size: cover;
+  height:98vh;
+}
+
+.turtle{
+  display:flex;
+
+}
 .page-div {
   /* for testing */
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   /* regular */
-  height:98vh;
+  /* height:98vh; */
   font-family: 'Roboto', sans-serif;
   display:flex;
   flex-direction:column;
   justify-content:space-around;
   align-items:center;
-  background-image:url("/images/home.jpg");
-  background-size: cover;
+  height:55%;
+  /* background-image:url("/images/home.jpg"); */
+  /* background-size: cover; */
 }
 
 a {
@@ -47,7 +73,7 @@ a {
 }
 
 .main-item#top, .main-item#bottom {
-  width:30%;
+  width:20%;
   height:15%;
   margin: 20px;
   padding: 30px;
@@ -62,7 +88,7 @@ a {
 
 .middle-items {
   display:flex;
-  height:50%;
+  height:30%;
   width:90%;
   justify-content: space-between;
   text-align:center;
