@@ -50,7 +50,7 @@
           ];
           var value = 0;
           function changeText() {
-              document.getElementById('pText').innerHTML = "My fact for you is: \n" + text[value];
+              document.getElementById('pText').innerHTML = text[Math.floor(Math.random() * text.length)];
               value++;
               if (value >= text.length) {
                 value = 0;
