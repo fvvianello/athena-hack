@@ -73,6 +73,11 @@ color scheme
   border-radius: 50%;
   height:100px;
 }
+
+.icon img {
+  padding-top:20px;
+}
+
 h1 {
   font-family: 'Amatic SC', cursive;
 }
