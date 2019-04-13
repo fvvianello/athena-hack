@@ -29,6 +29,12 @@ color scheme
   background:white;
 }
 
+.main-item:hover {
+  background: transparent;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
 .main-item#top {
   width:30%;
   height:15%;
