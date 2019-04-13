@@ -15,47 +15,53 @@ color scheme
   font-family: 'Roboto', sans-serif;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  justify-content:space-around;
   align-items:center;
+  background:#adebeb;
 }
 
 .main-item{
-  height: 15%;
   border: 1px solid green;
   font-family: 'Amatic SC', cursive;
   text-align:center;
   font-size: 20pt;
+  border-radius:50%;
+  background:white;
 }
 
 .main-item#top {
   width:30%;
+  height:15%;
   margin: 20px;
   padding: 30px;
 }
 
 .main-item#bottom {
   width:30%;
+  height:15%;
   margin: 20px;
   padding: 30px;
 }
 
 .main-item#merlin {
   border:none;
+  background:inherit;
 }
 
 .middle-items {
   display:flex;
-  height:25%;
+  height:30%;
   width:90%;
   justify-content: space-between;
   text-align:center;
+  align-items:center;
 }
 
 .middle-items > .main-item {
   width: 30%;
-  padding-top: 10px;
-  padding-bottom: 20px;
-
+  height:15%;
+  padding:  30px 10px;
+  /* padding-top:30px; */
 }
 h1 {
   font-family: 'Amatic SC', cursive;
