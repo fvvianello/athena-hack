@@ -10,3 +10,8 @@ h1 {
   display: flex;
   justify-content:space-between;
 }
+
+.picture_icons{
+  display: flex;
+  flex-direction:column;
+}
