@@ -4,7 +4,7 @@
     <title> Help me recycle </title>
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Roboto" rel="stylesheet">
-
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
     <!-- style -->
     <link rel="stylesheet" type="text/css" href="/styles/style-game.css">
 
@@ -20,5 +20,100 @@
         <img src="images/happy.png" width="100">
       </div>
     </div>
+
+    <script type="text/javascript">
+
+    //Aliases
+let Application = PIXI.Application,
+    loader = PIXI.loader,
+    resources = PIXI.loader.resources,
+    Sprite = PIXI.Sprite;
+
+//Create a Pixi Application
+let app = new Application({
+    width: 60,
+    height: 60,
+    antialias: true,
+    transparent: false,
+    resolution: 1
+  }
+);
+
+
+    document.body.appendChild(app.view);
+    app.renderer.backgroundColor = 0x061639;
+    app.renderer.autoResize = true;
+    app.renderer.resize(60, 60);
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+
+    //load an image and run the `setup` function when it's done
+    loader
+      .add("images/sad_noback.png")
+      .add("images/plasticBag.png")
+      .add("images/can.png")
+      .load(setup);
+
+
+    let marlin, state;
+    //This `setup` function will run when the image has loaded
+    function setup() {
+      // id = resources["images/treasureHunter.json"].textures;
+      //Create the cat sprite
+      marlin = new Sprite(resources["images/sad_noback.png"].texture);
+      plastic = new Sprite(resources["images/plasticBag.png"].texture);
+      // let can = new Sprite(resources["can.png"].texture);
+      // can.position.set(-5, -5);
+      //
+      marlin.x = 10;
+      marlin.y = 10;
+      marlin.vx = 0;
+      marlin.vy = 0;
+
+      plastic.scale.x = 0.5;
+      plastic.scale.y = 0.5;
+      plastic.x = 0;
+      plastic.y = 0;
+      plastic.vx = 0;
+      plastic.vy = 0;
+      // marlin.scale.set(0.5, 0.5);
+      // 939/2
+      // marlin.scale.x = 0.5;
+      // marlin.scale.y = 0.5;
+      marlin.width = 422;
+      marlin.height = 380;
+
+      //
+      // let rubbish = new Container();
+      // rubbish.addChild(plastic);
+      // rubbish.addChild(can);
+
+
+      //Add the cat to the stage
+      app.stage.addChild(marlin);
+
+        //Set the game state
+      state = play;
+
+        //Start the game loop
+      app.ticker.add(delta => gameLoop(delta));
+
+      }
+
+      function gameLoop(delta){
+
+        //Update the current game state:
+        state(delta);
+      }
+
+      function play(delta) {
+
+        //Move the cat 1 pixel to the right each frame
+        marlin.vx = 1
+        marlin.x += marlin.vx;
+      }
+    </script>
   </body>
 </html>

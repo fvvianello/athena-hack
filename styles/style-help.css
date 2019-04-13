@@ -33,7 +33,7 @@ h1#blue {
   display: flex;
   justify-content: space-between;
 }
-
+/* NEEEDS TO BE SET UP TO BE USABLE INSIDE THE PIC AND TEXT DIV */
 .pic_text{
   width:60%;
 }
@@ -51,6 +51,7 @@ h1#blue {
 /*  FOOD WASTE hover comments */
 #FoodWasteText {
     display:none;
+
 }
 #FoodWastePic:hover #FoodWasteText {
     display:block;
