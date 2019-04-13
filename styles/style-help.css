@@ -13,6 +13,7 @@ h2{
 
 p {
   font-family: 'Roboto', sans-serif;
+  text-align: justify;
 }
 h1#blue {
   color: blue;
