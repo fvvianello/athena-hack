@@ -6,6 +6,9 @@ font-family: 'Amatic SC', cursive;
 color scheme
  */
 
+html {
+  color:black;
+}
 .page-div {
   /* for testing */
   border: 1px solid red;
@@ -20,6 +23,11 @@ color scheme
   background:#adebeb;
 }
 
+a {
+  text-decoration:none;
+  color: black;
+}
+
 .main-item{
   border: 1px solid green;
   font-family: 'Amatic SC', cursive;
@@ -31,8 +39,10 @@ color scheme
   background: transparent;
   cursor:pointer;
 }
-.main-item:hover .item-text{
-  transform: rotate(90deg);
+
+
+.main-item:hover .item-text > a {
+  color: white;
 }
 
 .main-item#top, .main-item#bottom {
