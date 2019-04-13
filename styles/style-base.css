@@ -23,7 +23,7 @@ h2{
   color: #073518;
 }
 .all_page{
-  border: 1px solid red;
+  border: 1px solid green;
   background-image:url("/images/home.jpg");
   background-size: cover;
   height:98vh;
