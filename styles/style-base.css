@@ -20,15 +20,21 @@ color scheme
 }
 
 .main-item{
-  width:50%;
+  width:30%;
+  height: 30%;
+  margin-top: 20px;
+  padding-top: 30px;
   border: 1px solid green;
   text-align:center;
   font-family: 'Amatic SC', cursive;
+  text-align:center;
 
 }
 
 .middle-items{
   display:flex;
+  height: 30%;
+  justify-content: space-between;
 }
 h1 {
   font-family: 'Amatic SC', cursive;
