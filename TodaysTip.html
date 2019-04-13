@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Linked page 1 </title>
-    <link rel="stylesheet" type="text/css" href="/styles/style-tip.css">
+<head>
+  <title> Linked page 1 </title>
+  <!-- <link rel="stylesheet" type="text/css" href="/styles/style-tip.css"> -->
 
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Roboto" rel="stylesheet">
+  <!-- JAVASCRIPT  -->
+  <!-- <script "scripts/fact_gen.js" type='text/javascript'> </script> -->
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Roboto" rel="stylesheet">
 
-  </head>
 
-  <body>
-    <h1>Today's fun fact </h1>
-    <!-- <div id="factDisplay"></div> -->
-    <div id="changeText">
-    This is the fact. </div>
-    <script>src="scripts/fact_gen.js"</script>
-  </body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  .bs-example{
+    margin: 20px;
+  }
+  </style>
+
+  <script type="text/javascript" src="array.js"></script>
+  <link rel="stylesheet" type="text/css" href="/styles/style-tip.css">
+
+</head>
+
+<body>
+  <h1>Today's fun fact </h1>
+
+<div class="wrapper">
+    <!-- <div class="changeText">
+      Marlin's favourite fact:
+    </div>
+  <input onclick="change()" type="button"  class="btn btn-info" value="DISCOVER FUN FACT" id="myButton1"></input>
+</div> -->
+
+        <script type="text/javascript">
+            var text=[
+              'One wasted coffe mug in the sea kills 20 Nemo fishes',
+              'lore ipsum sdflksdjflksdgandf',
+              'beer saves the rainforest' ,
+              'in the sea kills 2 whales',
+              'One wasted coffe mug in the sea kills 20 Nemo fishs'
+            ];
+            var value = 0;
+            function changeText() {
+                document.getElementById('pText').innerHTML = "My fact for you is: \n" + text[value];
+                value++;
+                if (value >= text.length) {
+                  value = 0;
+                }
+            }
+        </script>
+
+        <input class="btn btn-info" type="button" value="GIVE ME A COOL FACT!" id="b1" onclick="changeText(this.value);"/>
+
+        <p id="pText">            </p>
+</div>
+</body>
 </html>
