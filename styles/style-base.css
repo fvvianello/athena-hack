@@ -1,5 +1,20 @@
-.test-div {
+/*
+fonts
+font-family: 'Roboto', sans-serif;
+font-family: 'Amatic SC', cursive;
+
+color scheme
+ */
+
+.page-div {
+  /* for testing */
   border: 1px solid red;
-  /* background:green; */
-  height:50px;
+
+  /* regular */
+  height:98vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
 }
