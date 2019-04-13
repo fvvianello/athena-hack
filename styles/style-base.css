@@ -13,7 +13,7 @@ h1{
   font-family: 'Roboto', cursive;
   text-decoration: underline;
   font-weight: 900;
-  color: #BFF6BD;
+  color: #DFFBE9;
   font-size:250%;
 }
 h2{
@@ -69,7 +69,7 @@ a {
 
 
 .main-item:hover .item-text > a {
-  color: white;
+  color: #299751;
 }
 
 .main-item#top, .main-item#bottom {
@@ -78,7 +78,7 @@ a {
   margin: 20px;
   padding: 30px;
   border-radius:50%;
-  background:white;
+  background:#DFFBE9;
 }
 
 .main-item#merlin {
@@ -106,13 +106,13 @@ a {
 
 .icon{
   border: 1px solid pink;
-  background:white;
-  border-radius: 50%;
-  height:100px;
+  background:#DFFBE9;
+  border-radius: 100%;
+  height:300px;
 }
 
 .icon img {
-  padding-top:20px;
+  padding-top:5px;
 }
 
 h1 {
