@@ -2,10 +2,13 @@ html {
   font-family: 'Roboto', sans-serif;
 
 }
-h1 {
+h1, h2 {
   font-family: 'Amatic SC', cursive;
 }
 
+h1#blue {
+  color: blue;
+}
 .title-container{
   display: flex;
   justify-content:space-between;
@@ -15,3 +18,5 @@ h1 {
   display: flex;
   flex-direction:column;
 }
+
+3
