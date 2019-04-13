@@ -28,36 +28,38 @@
 </head>
 
 <body>
-  <h1>Today's fun fact </h1>
+  <div class="page-container">
 
-<div class="wrapper">
-    <!-- <div class="changeText">
-      Marlin's favourite fact:
+    <div class="header">
+      <h1>Today's fun fact </h1>
     </div>
-  <input onclick="change()" type="button"  class="btn btn-info" value="DISCOVER FUN FACT" id="myButton1"></input>
-</div> -->
 
-        <script type="text/javascript">
-            var text=[
-              'One wasted coffe mug in the sea kills 20 Nemo fishes',
-              'lore ipsum sdflksdjflksdgandf',
-              'beer saves the rainforest' ,
-              'in the sea kills 2 whales',
-              'One wasted coffe mug in the sea kills 20 Nemo fishs'
-            ];
-            var value = 0;
-            function changeText() {
-                document.getElementById('pText').innerHTML = "My fact for you is: \n" + text[value];
-                value++;
-                if (value >= text.length) {
-                  value = 0;
-                }
-            }
-        </script>
-
+    <div class="wrapper">
+      <script type="text/javascript">
+          var text=[
+            'One wasted coffe mug in the sea kills 20 Nemo fishes',
+            'lore ipsum sdflksdjflksdgandf',
+            'beer saves the rainforest' ,
+            'in the sea kills 2 whales',
+            'One wasted coffe mug in the sea kills 20 Nemo fishs'
+          ];
+          var value = 0;
+          function changeText() {
+              document.getElementById('pText').innerHTML = "My fact for you is: \n" + text[value];
+              value++;
+              if (value >= text.length) {
+                value = 0;
+              }
+          }
+      </script>
+      <div class="button-container">
         <input class="btn btn-info" type="button" value="GIVE ME A COOL FACT!" id="b1" onclick="changeText(this.value);"/>
-
+      </div>
+      
+      <div class="facts-text">
         <p id="pText">            </p>
-</div>
-</body>
+      </div>
+    </div>
+  </div>
+  </body>
 </html>
