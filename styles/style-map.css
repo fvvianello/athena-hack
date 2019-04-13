@@ -1,0 +1,12 @@
+h1{
+  font-family: 'Amatic SC', cursive;
+  text-align:left;
+
+}
+body{
+  background-color: hsl(80, 83%, 75%);
+}
+
+.title-container{
+  display:flex;
+}

@@ -1,0 +1,38 @@
+html {
+  font-family: 'Roboto', sans-serif;
+
+}
+h1{
+  font-family: 'Amatic SC', cursive;
+}
+h2{
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  text-decoration: underline;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+h1#blue {
+  color: blue;
+}
+.title-container{
+  display: flex;
+  justify-content:space-between;
+}
+
+.picture_icons{
+  display: flex;
+  flex-direction:column;
+  width:40%;
+}
+
+.pic-and-text{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pic_text{
+  width:60%;
+}

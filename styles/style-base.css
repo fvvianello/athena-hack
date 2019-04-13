@@ -6,6 +6,9 @@ font-family: 'Amatic SC', cursive;
 color scheme
  */
 
+html {
+  color:black;
+}
 .page-div {
   /* for testing */
   border: 1px solid red;
@@ -20,33 +23,35 @@ color scheme
   background:#adebeb;
 }
 
+a {
+  text-decoration:none;
+  color: black;
+}
+
 .main-item{
   border: 1px solid green;
   font-family: 'Amatic SC', cursive;
   text-align:center;
   font-size: 20pt;
-  border-radius:50%;
-  background:white;
 }
 
 .main-item:hover {
   background: transparent;
-  transform: rotate(90deg);
-  cursor: pointer;
+  cursor:pointer;
 }
 
-.main-item#top {
+
+.main-item:hover .item-text > a {
+  color: white;
+}
+
+.main-item#top, .main-item#bottom {
   width:30%;
   height:15%;
   margin: 20px;
   padding: 30px;
-}
-
-.main-item#bottom {
-  width:30%;
-  height:15%;
-  margin: 20px;
-  padding: 30px;
+  border-radius:50%;
+  background:white;
 }
 
 .main-item#merlin {
@@ -56,7 +61,7 @@ color scheme
 
 .middle-items {
   display:flex;
-  height:30%;
+  height:50%;
   width:90%;
   justify-content: space-between;
   text-align:center;
@@ -65,10 +70,24 @@ color scheme
 
 .middle-items > .main-item {
   width: 30%;
-  height:15%;
-  padding:  30px 10px;
-  /* padding-top:30px; */
+  height: 50%;
+  border:none;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.icon{
+  border: 1px solid pink;
+  background:white;
+  border-radius: 50%;
+  height:100px;
+}
+
+.icon img {
+  padding-top:20px;
+}
+
 h1 {
   font-family: 'Amatic SC', cursive;
 }
