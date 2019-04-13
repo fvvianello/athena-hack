@@ -37,3 +37,21 @@ h1#blue {
 .pic_text{
   width:60%;
 }
+
+
+
+/* PLASTIC BAG hover comments */
+#PlasticBagText {
+    display:none;
+}
+#PlasticBagPic:hover #PlasticBagText {
+    display:block;
+}
+
+/*  FOOD WASTE hover comments */
+#FoodWasteText {
+    display:none;
+}
+#FoodWastePic:hover #FoodWasteText {
+    display:block;
+}
