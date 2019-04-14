@@ -17,6 +17,7 @@
         <h1> RECYCLING GAME </h1>
         <p>Help keeping Marlin's ocean clean by sorting the waste into either recycling or not. </p>
       </div>
+      <div id="target" class="dot"></div>
       <div class="element">
         <img src="images/happy.png" width="100">
       </div>
@@ -179,7 +180,7 @@
       app.stage.addChild(plastic);
       app.stage.addChild(can);
       app.stage.addChild(cardboard);
-      app.stage.addChild(graphics);
+      // app.stage.addChild(graphics);
         //Set the game state
       state = play;
 
@@ -208,11 +209,11 @@
 
         marlin.on('pointerdown',function(){
         marlin.position.x = marlin.position + 5;
-        marlin.position.y = marlin.position + 5;
+        // marlin.position.y = marlin.position + 5;
         // document.body.appendChild(app.view);
-        let text = new PIXI.Text('Recycling is FUN!',{fontFamily : 'Roboto', fontSize: 24, fill : 0x000000, align : 'center'});
-        app.stage.addChild(text);
-        app.renderer.render(stage);
+        // let text = new PIXI.Text('Recycling is FUN!',{fontFamily : 'Roboto', fontSize: 24, fill : 0x000000, align : 'center'});
+        // app.stage.addChild(text);
+        // app.renderer.render(stage);
     });
 
         cardboard.on('pointerdown',function(){
