@@ -15,4 +15,16 @@ h2{
     justify-content:space-between;
   }
 
+body {
+  border: 1px ;
+
+  /* regular */
+  height:98vh;
+  font-family: 'Roboto', sans-serif;
+  /* background-image: url("/images/happy.png"); */
+  /* background-color: #f5f2d0; */
+
+}
+
+
 /* * {padding: 0; margin: 0} */
