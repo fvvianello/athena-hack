@@ -4,7 +4,8 @@
 
 Saving Marlin is a fun and educational app to get children interested in recycling. We believe children are the ultimate driving force for change.
 
-![alt text](https://github.com/fvvianello/athena-hack/images/happy.png)
+![alt text](https://raw.githubusercontent.com/fvvianello/athena-hack/images/happy.png)
+
 
 
 ## Getting Started
