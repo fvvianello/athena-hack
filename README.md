@@ -26,7 +26,7 @@ python -m http.server
 
 ## Versioning
 
-This is version 0.0.
+This is version 0.0.1. This code was developed as part of the Athena Hackathon 2019. 
 
 ## Authors
 
