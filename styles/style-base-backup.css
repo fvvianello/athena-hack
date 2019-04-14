@@ -41,18 +41,15 @@ a {
   align-items: center;
 }
 
-.main-item:hover {
-  background: transparent;
-  cursor:pointer;
+.item-text {
+  margin-top:10px;
 }
 
-
-.main-item:hover .item-text > a {
-  color: white;
+#top .element:hover .item-text > a {
+  color:white;
 }
-
 .element {
-  width:40%;
+  width:45%;
   height:30%;
   margin: 20px;
   padding: 30px 10px;
@@ -98,11 +95,12 @@ strong {
   color: teal;
   font-family: 16pt;
 }
-.element #map-icon {
+.element#map-icon, .element#tip-icon {
   display:flex;
   flex-direction: column;
-  margin:0;
-  padding:0;
+  justify-content: flex-start;
+  padding-top:10px;
+  height:100px;
 }
 
 h1 {
