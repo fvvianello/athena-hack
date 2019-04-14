@@ -95,12 +95,56 @@
       };
 
       marlin = new Sprite(resources["images/sad_noback.png"].texture);
+      // marlinH = new Sprite(resources"images/happy.png")
       plastic = new Sprite(resources["images/plasticBag.png"].texture);
       can = new Sprite(resources["images/can.png"].texture);
       cardboard = new Sprite(resources["images/cardboard-box.png"].texture);
       // let can = new Sprite(resources["can.png"].texture);
       // can.position.set(-5, -5);
       //
+
+
+
+
+      // create the root of the scene graph
+      var stage = new PIXI.Container();
+
+      var bol = false;
+
+      // create a texture from an image path
+      var texture = PIXI.Texture.fromImage('images/sad_noback.png');
+
+      // create a second texture
+      var secondTexture = PIXI.Texture.fromImage('images/happy.png');
+
+      // create a new Sprite using the texture
+      var dude = new PIXI.Sprite(texture);
+
+      // animate();
+      //
+      // function animate() {
+      //     requestAnimationFrame(animate);
+      //
+      //     // just for fun, let's rotate mr rabbit a little
+      //     dude.rotation += 0.1;
+      //
+      //     // render the stage
+      //     app.renderer.render(stage);
+      // }
+
+            // center the sprites anchor point
+      //dude.anchor.set(10.5);
+      // dude.x = 10;
+      // dude.y = 10
+      // move the sprite to the center of the screen
+      // dude.position.x = app.renderer.width / 2;
+      // dude.position.y = app.renderer.height / 2;
+      // dude.set()
+      dude.scale.x = 0.4;
+      dude.scale.y = 0.4;
+      // make the sprite interactive
+      dude.interactive = true;
+      dude.buttonMode = true;
 
 
       marlin.x = 10;
@@ -137,8 +181,6 @@
       cardboard.scale.y = 0.2;
       cardboard.vx = 0;
       cardboard.vy = 0;
-      cardboard.tap = noop;
-      cardboard.click = noop;
       cardboard.interactive = true;
       cardboard.buttonMode = true;
       // marlin.scale.set(0.5, 0.5);
@@ -177,12 +219,14 @@
       // app.stage.addChiled(animatedSprite)
       // app.stage.addChild(container);
       app.stage.addChild(marlin);
-      // app.stage.addChild(text)
       app.stage.addChild(plastic);
       app.stage.addChild(can);
       app.stage.addChild(cardboard);
+      // app.stage.addChild(dude);
+      // app.stage.addChild(dude);
 
-      // app.stage.addChild(graphics);
+
+
         //Set the game state
       state = play;
 
@@ -203,7 +247,7 @@
       function play(delta) {
 
         //Move the cat 1 pixel to the right each frame
-        marlin.vx = 1
+        marlin.vx = 0.5
         marlin.x += marlin.vx;
         plastic.vx = 2;
         plastic.x += plastic.vx;
@@ -213,35 +257,52 @@
         cardboard.x += cardboard.vx;
 
 
+
         marlin.on('pointerdown',function(){
-        marlin.position.x = marlin.position + 5;
-        // marlin.position.y = marlin.position + 5;
-        // document.body.appendChild(app.view);
-        // let text = new PIXI.Text('Recycling is FUN!',{fontFamily : 'Roboto', fontSize: 24, fill : 0x000000, align : 'center'});
-        // app.stage.addChild(text);
-        // app.renderer.render(stage);
+        marlin.position.x = 0;
+        marlin.position.y = 0;
+        marlin.vx = 0;
+        marlin.vy = 0;
     });
 
-        cardboard.on('pointerdown',function(){
+
+
+        // dude.on('pointerdown', function ()
+        // {
+        //     bol = !bol;
+        //
+        //     if(bol)
+        //     {
+        //         dude.texture = secondTexture;
+        //         app.renderer.render(stage);
+        //     }
+        //     else
+        //     {
+        //         dude.texture = texture;
+        //         app.renderer.render(stage);
+        //     }
+        // });
+
+    cardboard.on('pointerdown',function(){
 
         // let text = new Sprite(resources["images/recycle2.jpg"].texture);
         let text = new PIXI.Text('RECYCLABLE',{fontFamily : 'Roboto', fontSize: 24, fill : num, align : 'right'});
-        text.position.x = cardboard.position.x
-        text.position.y = cardboard.position.y
+        text.position.x = cardboard.position.x;
+        text.position.y = cardboard.position.y;
         cardboard.position.x = cardboard.position.x + 2;
         cardboard.position.y = cardboard.position + 5;
         // text.set(cardboard.postition)
+
         app.stage.addChild(text);
-        // document.body.appendChild(app.view);
         app.renderer.render(stage);
     });
 
-        can.on('pointerdown',function(){
+    can.on('pointerdown',function(){
 
         // let text = new Sprite(resources["images/recycle2.jpg"].texture);
         let text = new PIXI.Text('RECYCLABLE',{fontFamily : 'Roboto', fontSize: 24, fill : num, align : 'right'});
-        text.position.x = can.position.x
-        text.position.y = can.position.y
+        text.position.x = can.position.x;
+        text.position.y = can.position.y;
         can.position.x = can.x + 2;
         can.position.y = can.position + 5;
         // text.set(cardboard.postition)
