@@ -37,6 +37,6 @@ This is version 0.0.1. This code was developed as part of the Athena Hackathon 2
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
 
 
