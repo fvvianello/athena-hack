@@ -2,7 +2,8 @@
 
 # Saving Marlin
 
-One Paragraph of project description goes here
+Saving Marlin is a fun and educational app to get children interested in recycling. We believe children are the ultimate driving force for change.
+
 
 ## Getting Started
 
