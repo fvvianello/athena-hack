@@ -21,9 +21,10 @@ h2{
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', cursive;
   text-align: justify;
   color: #1E341F;
+  padding: 10px;
 }
 h1#blue {
   color: blue;
