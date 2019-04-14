@@ -26,5 +26,9 @@ body {
 
 }
 
+#sad_happy a:hover {
+  background: url('img_navsprites_hover.gif') 0 -45px;
+}
+
 
 /* * {padding: 0; margin: 0} */

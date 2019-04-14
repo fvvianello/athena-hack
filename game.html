@@ -57,7 +57,7 @@
       .add("images/plasticBag.png")
       .add("images/can.png")
       .add("images/cardboard-box.png")
-      .add("images/happy.png")
+      .add("images/happy-sprite.png")
       .add("images/recycle2.png")
       .load(setup);
 
@@ -107,31 +107,32 @@
 
 
       // create the root of the scene graph
-      var stage = new PIXI.Container();
-
-      var bol = false;
-
-      // create a texture from an image path
-      var texture = PIXI.Texture.fromImage('images/sad_noback.png');
-
-      // create a second texture
-      var secondTexture = PIXI.Texture.fromImage('images/happy.png');
-
-      // create a new Sprite using the texture
-      var dude = new PIXI.Sprite(texture);
-
-      // animate();
+      // var stage = new PIXI.Container();
       //
-      // function animate() {
-      //     requestAnimationFrame(animate);
+      // var bol = false;
       //
-      //     // just for fun, let's rotate mr rabbit a little
-      //     dude.rotation += 0.1;
+      // // create a texture from an image path
+      // var texture = PIXI.Texture.fromImage('images/sad_noback.png');
       //
-      //     // render the stage
-      //     app.renderer.render(stage);
-      // }
+      // // create a second texture
+      // var secondTexture = PIXI.Texture.fromImage('images/happy-sprite.png');
+      //
+      // // create a new Sprite using the texture
+      // var dude = new PIXI.Sprite(texture);
 
+      // setup events
+      // marlin
+      //     // events for drag start
+      //     .on('mousedown', onDragStart)
+      //     .on('touchstart', onDragStart)
+      //     // events for drag end
+      //     .on('mouseup', onDragEnd)
+      //     .on('mouseupoutside', onDragEnd)
+      //     .on('touchend', onDragEnd)
+      //     .on('touchendoutside', onDragEnd)
+      //     // events for drag move
+      //     .on('mousemove', onDragMove)
+      //     .on('touchmove', onDragMove);
             // center the sprites anchor point
       //dude.anchor.set(10.5);
       // dude.x = 10;
@@ -139,12 +140,13 @@
       // move the sprite to the center of the screen
       // dude.position.x = app.renderer.width / 2;
       // dude.position.y = app.renderer.height / 2;
-      // dude.set()
-      dude.scale.x = 0.4;
-      dude.scale.y = 0.4;
-      // make the sprite interactive
-      dude.interactive = true;
-      dude.buttonMode = true;
+      // dude.x = 200;
+      // dude.y = 200;
+      // dude.scale.x = 0.4;
+      // dude.scale.y = 0.4;
+      // // make the sprite interactive
+      // dude.interactive = true;
+      // dude.buttonMode = true;
 
 
       marlin.x = 10;
@@ -218,11 +220,12 @@
       //Add the cat to the stage
       // app.stage.addChiled(animatedSprite)
       // app.stage.addChild(container);
+      //app.stage.addChild(dude);
       app.stage.addChild(marlin);
       app.stage.addChild(plastic);
-      app.stage.addChild(can);
       app.stage.addChild(cardboard);
-      // app.stage.addChild(dude);
+      app.stage.addChild(can);
+
       // app.stage.addChild(dude);
 
 
@@ -257,31 +260,30 @@
         cardboard.x += cardboard.vx;
 
 
+        //
+        // dude.on('pointerdown', function (){
+        //      bol = !bol;
+        // //
+        //     if(bol)
+        //     {
+        //         dude.texture = secondTexture;
+        //     }
+        //     else
+        //     {
+        //         dude.texture = texture;
+        //     }
+        //
+        //   app.renderer.render(stage);
+        // });
+
 
         marlin.on('pointerdown',function(){
         marlin.position.x = 0;
         marlin.position.y = 0;
         marlin.vx = 0;
         marlin.vy = 0;
-    });
+        });
 
-
-
-        // dude.on('pointerdown', function ()
-        // {
-        //     bol = !bol;
-        //
-        //     if(bol)
-        //     {
-        //         dude.texture = secondTexture;
-        //         app.renderer.render(stage);
-        //     }
-        //     else
-        //     {
-        //         dude.texture = texture;
-        //         app.renderer.render(stage);
-        //     }
-        // });
 
     cardboard.on('pointerdown',function(){
 
@@ -305,26 +307,21 @@
         text.position.y = can.position.y;
         can.position.x = can.x + 2;
         can.position.y = can.position + 5;
+        app.stage.addChild(text);
+        app.renderer.render(stage);
+    });
+
+    plastic.on('pointerdown',function(){
+        let text = new PIXI.Text('NON-RECYCLABLE',{fontFamily : 'Roboto', fontSize: 24, fill : tomatored, align : 'right'});
+        text.position.x = plastic.position.x+15;
+        text.position.y = plastic.position.y+30;
+        plastic.position.x = plastic.x + 2;
+        plastic.position.y = plastic.position + 5;
         // text.set(cardboard.postition)
         app.stage.addChild(text);
         // document.body.appendChild(app.view);
         app.renderer.render(stage);
     });
-
-    plastic.on('pointerdown',function(){
-
-    // let text = new Sprite(resources["images/recycle2.jpg"].texture);
-    let text = new PIXI.Text('NON-RECYCLABLE',{fontFamily : 'Roboto', fontSize: 24, fill : tomatored, align : 'right'});
-    text.position.x = plastic.position.x+15;
-    text.position.y = plastic.position.y+30;
-    plastic.position.x = plastic.x + 2;
-    plastic.position.y = plastic.position + 5;
-    // text.set(cardboard.postition)
-    app.stage.addChild(text);
-    // document.body.appendChild(app.view);
-    app.renderer.render(stage);
-});
-
 
 
       }
