@@ -2,7 +2,7 @@
 <html>
   <head>
     <title> Recyling is fun! </title>
-    <link rel="stylesheet" type="text/css" href="/styles/style-base.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style-base-backup.css">
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Roboto" rel="stylesheet">
@@ -15,32 +15,52 @@
 
       <!-- button 1 -->
           <div class="main-item" id="top">
-              <a href="TodaysTip.html"> Today's Fun Fact </a>
+              <div class="element" id="tip-icon">
+                <div class="icon">
+                  <img src="/images/idea.svg" height="50px" width="auto" />
+                </div>
+                <div class="item-text" id="tip-text">
+                  <a href="TodaysTip.html"> Today's Fun Fact </a>
+                </div>
+              </div>
+              <div class="element" id="map-icon">
+                <div class="icon">
+                  <img src="/images/map.png" height="50px" width="auto" />
+                </div>
+                <div class="item-text">
+                  <a id ="text" href="map.html"> Clean City </a>
+                </div>
+              </div>
           </div>
 
-          <div class="middle-items">
-
-            <div class="main-item">
-              <div class="icon">
-                <img src="/images/map.png" height="50px" width="auto" />
+          <div class="main-item" id="middle">
+            <div class="title-box">
+              <h1> SAVING MARLIN </h1>
+            </div>
+            <div class="home-box">
+              <div class="element-middle" id="marlin">
+                <img src="images/happy.png" width="120px">
               </div>
-              <div class="item-text">
-                <a id ="text" href="map.html"> Clean City </a>
+              <div class="element-middle" id="text">
+                <div class="text-box" id="text-child">
+                  <p>
+                    <strong> Hi! </strong> My name is Marlin.
+                    Help me keep my home plastic-free by learning how to recycle...
+                  </p>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="main-item" id="marlin">
-              <img src="images/happy.png" width="100px">
-            </div>
-            <div class="main-item">
+          <div class="main-item" id="bottom">
+            <div class="element">
               <a href="game.html"> Let's play a game! </a>
             </div>
+            <div class="element">
+              <a href="helpme.html"> Help me recycle! </a>
+            </div>
           </div>
-
-        <div class="main-item" id="bottom">
-          <a href="helpme.html"> Help me recycle! </a>
-        </div>
       </div>
-  
+
   </body>
 </html>
