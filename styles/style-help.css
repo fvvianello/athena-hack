@@ -23,22 +23,24 @@ h1#blue {
   justify-content:space-between;
 }
 
-.picture_icons{
-  display: flex;
-  flex-direction:column;
-  width:40%;
-}
-
 .pic-and-text{
   display: flex;
-  justify-content: space-between;
+  justify-content: justify;
+  flex-direction:column;
+  align-items: middle;
+  display: inline-block;
+  width:100%;
 }
 
-.pic_text{
-  width:60%;
+.picture_icons {
+  display: flex;
+  flex-direction: column;
+  align-items: middle;
 }
 
-
+.pic {
+  text-align: center;
+}
 
 /* PLASTIC BAG hover comments */
 #PlasticBagText {
@@ -54,4 +56,27 @@ h1#blue {
 }
 #FoodWastePic:hover #FoodWasteText {
     display:block;
+}
+
+/* BATTERIES homver comments*/
+#BatteriesText {
+  display:none;
+}
+#BatteriesPic:hover #BatteriesText {
+  display:block;
+}
+#BoxText {
+  display:none;
+}
+
+#BoxPic:hover #BoxText {
+  display:block;
+}
+
+#BottlesText {
+  display:none;
+}
+
+#BottlesPic:hover #BottlesText {
+  display:block;
 }
