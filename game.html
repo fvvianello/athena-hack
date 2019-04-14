@@ -102,6 +102,7 @@
       // can.position.set(-5, -5);
       //
 
+
       marlin.x = 10;
       marlin.y = 10;
       marlin.vx = 0;
@@ -180,6 +181,7 @@
       app.stage.addChild(plastic);
       app.stage.addChild(can);
       app.stage.addChild(cardboard);
+
       // app.stage.addChild(graphics);
         //Set the game state
       state = play;
@@ -189,11 +191,14 @@
 
       }
 
+
+
       function gameLoop(delta){
 
         //Update the current game state:
         state(delta);
       }
+
 
       function play(delta) {
 
@@ -206,6 +211,7 @@
         can.x += can.vx;
         cardboard.vx = 1;
         cardboard.x += cardboard.vx;
+
 
         marlin.on('pointerdown',function(){
         marlin.position.x = marlin.position + 5;
