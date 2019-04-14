@@ -55,9 +55,14 @@ a {
   padding: 30px 10px;
   border-radius:20%;
   background:rgba(255,255,255,0.3);
-  border: 5px solid white;
+  border: 5px solid #f5f2d0;
 }
 
+#top .element {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 130px;
+}
 .main-item#middle {
   border:none;
   height: 35%;
