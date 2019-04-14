@@ -67,6 +67,7 @@ a {
   margin-right: 10px; */
   width: 130px;
   margin-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .element#tip-icon, .element#game-icon {
@@ -106,8 +107,8 @@ a {
 p {
   margin:5px;
   color:black;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14pt;
+  font-family: 'Comfortaa', cursive;
+  font-size: 12pt;
   text-align: center;
 }
 
