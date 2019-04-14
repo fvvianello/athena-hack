@@ -12,10 +12,10 @@ html {
 
 .page-div {
   /* for testing */
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   /* regular */
-  height:98vh;
+  height:100vh;
   font-family: 'Roboto', sans-serif;
   display:flex;
   flex-direction:column;
@@ -41,26 +41,43 @@ a {
   align-items: center;
 }
 
-.main-item:hover {
-  background: transparent;
-  cursor:pointer;
+.item-text {
+  margin-top:10px;
 }
 
-
-.main-item:hover .item-text > a {
-  color: white;
+#top .element:hover .item-text > a {
+  color:white;
 }
 
+#bottom .element:hover .item-text > a {
+  color:white;
+}
 .element {
-  width:40%;
+  width:45%;
   height:30%;
   margin: 20px;
   padding: 30px 10px;
   border-radius:20%;
   background:rgba(255,255,255,0.3);
-  border: 5px solid white;
+  border: 5px solid #f5f2d0;
 }
 
+#top .element, #bottom .element {
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  width: 125px;
+  margin-bottom: 10px;
+}
+
+.element#tip-icon, .element#game-icon {
+  margin-left:30px;
+  margin-right:10px
+}
+
+.element#map-icon {
+  margin-left: 10px;
+  margin-right: 30px;
+}
 .main-item#middle {
   border:none;
   height: 35%;
@@ -98,11 +115,12 @@ strong {
   color: teal;
   font-family: 16pt;
 }
-.element #map-icon {
+.element#map-icon, .element#tip-icon, .element#game-icon {
   display:flex;
   flex-direction: column;
-  margin:0;
-  padding:0;
+  justify-content: flex-start;
+  padding-top:20px;
+  height:100px;
 }
 
 h1 {
