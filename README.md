@@ -39,7 +39,7 @@ This is version 0.0.
 
 ## Authors
 
-* **Francesca Vianello** - [](https://github.com/PurpleBooth)
+* **Francesca Vianello** - [](https://github.com/fvvianello)
 * **Astrid Stroobants** - [@aps217](https://github.com/aps217)
 * **Julia Schmidt** - [@misterblonde](https://github.com/misterblonde)
 
