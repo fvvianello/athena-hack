@@ -14,7 +14,8 @@
   <body>
     <div class="title-container">
       <div class="element">
-        <h1> What would you do? </h1>
+        <h1> RECYCLING GAME </h1>
+        <p>Help keeping Marlin's ocean clean by sorting the waste into either recycling or not. </p>
       </div>
       <div class="element">
         <img src="images/happy.png" width="100">
@@ -24,19 +25,19 @@
     <script type="text/javascript">
 
     //Aliases
-let Application = PIXI.Application,
-    loader = PIXI.loader,
-    resources = PIXI.loader.resources,
-    Sprite = PIXI.Sprite;
+    let Application = PIXI.Application,
+        loader = PIXI.loader,
+        resources = PIXI.loader.resources,
+        Sprite = PIXI.Sprite;
 
-//Create a Pixi Application
-let app = new Application({
-    width: 60,
-    height: 60,
-    antialias: true,
-    transparent: false,
-    resolution: 1
-  }
+    //Create a Pixi Application
+    let app = new Application({
+        width: 60,
+        height: 60,
+        antialias: true,
+        transparent: false,
+        resolution: 1
+      }
 );
 
 
@@ -54,30 +55,90 @@ let app = new Application({
       .add("images/sad_noback.png")
       .add("images/plasticBag.png")
       .add("images/can.png")
+      .add("images/cardboard-box.png")
+      .add("images/happy.png")
+      .add("images/recycle2.png")
       .load(setup);
 
+    //reate some textures from an image path
 
-    let marlin, state;
+
+    let marlin, plastic, can, cardboard, text, state;
     //This `setup` function will run when the image has loaded
     function setup() {
       // id = resources["images/treasureHunter.json"].textures;
       //Create the cat sprite
+      // var textureButton = PIXI.Texture.fromImage('images/button.png');
+      // var textureButtonDown = PIXI.Texture.fromImage('images/sad_noback.png');
+      // var textureButtonOver = PIXI.Texture.fromImage('images/happy.png');
+
+      // let MImages = ["happy.png","sad_noback.png"];
+      // let textureArray = [];
+      //
+      // for (let i=0; i < 2; i++)
+      // {
+      //      let texture = PIXI.Texture.from(MImages[i]);
+      //      textureArray.push(texture);
+      //      if (i=1)
+      //      {
+      //          i=0;
+      //      }
+      //
+      // };
+      //
+      // let animatedSprite = new PIXI.AnimatedSprite(textureArray);
+
+
+      var noop = function () {
+      	console.log('click');
+      };
+
       marlin = new Sprite(resources["images/sad_noback.png"].texture);
       plastic = new Sprite(resources["images/plasticBag.png"].texture);
+      can = new Sprite(resources["images/can.png"].texture);
+      cardboard = new Sprite(resources["images/cardboard-box.png"].texture);
       // let can = new Sprite(resources["can.png"].texture);
       // can.position.set(-5, -5);
       //
+
       marlin.x = 10;
       marlin.y = 10;
       marlin.vx = 0;
       marlin.vy = 0;
 
-      plastic.scale.x = 0.5;
-      plastic.scale.y = 0.5;
-      plastic.x = 0;
+
+      marlin.tap = noop;
+      marlin.click = noop;
+        // you can also listen to click and tap events :
+      plastic.x = -100;
       plastic.y = 0;
+      plastic.scale.x = 0.4;
+      plastic.scale.y = 0.4;
       plastic.vx = 0;
       plastic.vy = 0;
+      plastic.interactive = true;
+      plastic.buttonMode = true;
+
+      can.x = -150;
+      can.y = 200;
+      can.scale.x = 0.05;
+      can.scale.y = 0.05;
+      can.vx = 0;
+      can.vy = 0;
+      can.interactive = true;
+      can.buttonMode = true;
+
+
+      cardboard.x = -300;
+      cardboard.y = 300;
+      cardboard.scale.x = 0.2;
+      cardboard.scale.y = 0.2;
+      cardboard.vx = 0;
+      cardboard.vy = 0;
+      cardboard.tap = noop;
+      cardboard.click = noop;
+      cardboard.interactive = true;
+      cardboard.buttonMode = true;
       // marlin.scale.set(0.5, 0.5);
       // 939/2
       // marlin.scale.x = 0.5;
@@ -85,15 +146,40 @@ let app = new Application({
       marlin.width = 422;
       marlin.height = 380;
 
+      // const can = new PIXI.Sprite(texture);
+      marlin.interactive = true;
+      marlin.buttonMode = true;
+
       //
       // let rubbish = new Container();
       // rubbish.addChild(plastic);
+      var green = "#32CD32";
+      num = parseInt(green.substring(1), 16);
+
+      var tomato = "#ff6347"
+      tomatored = parseInt(tomato.substring(1), 16);
+
       // rubbish.addChild(can);
+      var graphics = new PIXI.Graphics();
+      graphics.beginFill(0xFFFFFF);
+      // set the line style to have a width of 5 and set the color to red
+      graphics.lineStyle(5, num);
 
-
+// draw a rectangle
+      graphics.drawRect(0, 0, 190, 40);
+      //
+      // let container = new PIXI.Container();
+      // container.addChild(cardboard);
+      // container.addChild(graphics);
       //Add the cat to the stage
+      // app.stage.addChiled(animatedSprite)
+      // app.stage.addChild(container);
       app.stage.addChild(marlin);
-
+      // app.stage.addChild(text)
+      app.stage.addChild(plastic);
+      app.stage.addChild(can);
+      app.stage.addChild(cardboard);
+      app.stage.addChild(graphics);
         //Set the game state
       state = play;
 
@@ -113,6 +199,66 @@ let app = new Application({
         //Move the cat 1 pixel to the right each frame
         marlin.vx = 1
         marlin.x += marlin.vx;
+        plastic.vx = 2;
+        plastic.x += plastic.vx;
+        can.vx = 2;
+        can.x += can.vx;
+        cardboard.vx = 1;
+        cardboard.x += cardboard.vx;
+
+        marlin.on('pointerdown',function(){
+        marlin.position.x = marlin.position + 5;
+        marlin.position.y = marlin.position + 5;
+        // document.body.appendChild(app.view);
+        let text = new PIXI.Text('Recycling is FUN!',{fontFamily : 'Roboto', fontSize: 24, fill : 0x000000, align : 'center'});
+        app.stage.addChild(text);
+        app.renderer.render(stage);
+    });
+
+        cardboard.on('pointerdown',function(){
+
+        // let text = new Sprite(resources["images/recycle2.jpg"].texture);
+        let text = new PIXI.Text('RECYCLABLE',{fontFamily : 'Roboto', fontSize: 24, fill : num, align : 'right'});
+        text.position.x = cardboard.position.x
+        text.position.y = cardboard.position.y
+        cardboard.position.x = cardboard.position.x + 2;
+        cardboard.position.y = cardboard.position + 5;
+        // text.set(cardboard.postition)
+        app.stage.addChild(text);
+        // document.body.appendChild(app.view);
+        app.renderer.render(stage);
+    });
+
+        can.on('pointerdown',function(){
+
+        // let text = new Sprite(resources["images/recycle2.jpg"].texture);
+        let text = new PIXI.Text('RECYCLABLE',{fontFamily : 'Roboto', fontSize: 24, fill : num, align : 'right'});
+        text.position.x = can.position.x
+        text.position.y = can.position.y
+        can.position.x = can.x + 2;
+        can.position.y = can.position + 5;
+        // text.set(cardboard.postition)
+        app.stage.addChild(text);
+        // document.body.appendChild(app.view);
+        app.renderer.render(stage);
+    });
+
+    plastic.on('pointerdown',function(){
+
+    // let text = new Sprite(resources["images/recycle2.jpg"].texture);
+    let text = new PIXI.Text('NON-RECYCLABLE',{fontFamily : 'Roboto', fontSize: 24, fill : tomatored, align : 'right'});
+    text.position.x = plastic.position.x+15;
+    text.position.y = plastic.position.y+30;
+    plastic.position.x = plastic.x + 2;
+    plastic.position.y = plastic.position + 5;
+    // text.set(cardboard.postition)
+    app.stage.addChild(text);
+    // document.body.appendChild(app.view);
+    app.renderer.render(stage);
+});
+
+
+
       }
     </script>
   </body>
